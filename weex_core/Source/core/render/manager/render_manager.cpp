@@ -387,6 +387,8 @@ std::unique_ptr<ValueWithType> RenderManager::CallNativeModule(const char *page_
   if (strcmp(module, "meta") == 0) {
     CallMetaModule(page_id, method, arguments);
   }
+
+  LOGE("Weex callNativeModule %s %s", module, method);
     
   RenderPageBase* page = GetPage(page_id);
   if (page == nullptr){ //page not exist, call normal platform layer
